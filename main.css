@@ -1,0 +1,1269 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@500&family=Nunito:ital@1&family=Poppins:wght@500&display=swap');
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}   
+body{
+    width: 100%;
+    min-height: 100%;
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    display: flex;  
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+.site-content{
+    flex: 1;
+    height: auto;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+h1, h2{
+    font-family: 'Montserrat', sans-serif;
+}
+header{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    background-color: transparent;
+}
+.header-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1.5rem;
+}
+
+
+.brand a{
+    font-size: 2.2rem;
+    color: #F72222;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+}
+.brand a span{
+    color: black;
+    font-size: 2.2rem;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+/* scrolled nav changes */
+.scrolled-nav{
+    background-color: #242424;
+    transition: all .5s ease;
+}
+.scrolled-nav .brand span{
+    color: white;
+}
+.scrolled-nav .burger-menu, .scrolled-nav .burger-menu:hover{
+    background-color: transparent;
+    box-shadow: none;
+}
+.scrolled-nav .bar, .scrolled-nav .bar::before, .scrolled-nav .bar::after{
+    background-color: white;
+}
+.scrolled-nav .nav-links{
+    background-color: #242424;
+    color: white;
+}
+.scrolled-nav .nav-links a{
+    color: white;
+}
+
+.burger-menu{
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: #eee;
+    border-radius: .3rem;
+    box-shadow: .3rem .3rem .3rem #cacaca,
+                -.3rem -.3rem .8rem #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6000;
+}
+.burger-menu:hover{
+    box-shadow: inset .3rem .3rem .3rem #cacaca,
+                inset -.3rem -.3rem .8rem #fff;
+}
+.bar{
+    width: 1.5rem;
+    height: 2px;
+    background-color: #333;
+    display: inline-block;
+    position: relative;
+    transition: background-color .5s;
+}
+.bar::before, .bar::after{
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #333;
+    transition: all .5s;
+}
+.bar::before{
+    top: -.4rem;
+}
+.bar::after{
+    top: .4rem;
+}
+.open .bar{
+    background-color: transparent;
+}
+.open .bar::before{
+    top: 0;
+    transform: rotate(135deg);
+}
+.open .bar::after{
+    top: 0;
+    transform: rotate(-135deg);
+}
+.nav-links{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 65vh;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: -.5rem 0 1rem rgba(0,0,0,.1);
+    transform: translatey(-100%);
+    transition: transform .8s;
+}
+.open .nav-links{
+    transform: translatex(0);
+}
+.nav-links ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-links ul li{
+    margin: 1rem 0;
+}
+.nav-links ul li a{
+    display: block;
+    padding: .3rem;
+    font-size: 1rem;
+    color: black;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+.nav-links ul li a:hover{
+    color: #F72222;
+}
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    background-color: #eee;
+    overflow-x: hidden;  
+}
+.design-line-wrapper{
+    position: absolute;
+    top: 8rem;
+    right: 3rem;
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.design-line{
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    position: relative;
+    opacity: .2;
+}
+.design-line::before{
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #F72222;
+    top: -.6rem;
+    left: -1rem;
+}
+.design-line::after{
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #F72222;
+    top: .6rem;
+    left: -1rem;
+}
+.design-clip-left{
+ left: 5rem;
+ top: 30%;
+}
+.design-clip-left .design-line:before, .design-clip-left .design-line::after{
+    background-color: white;
+}
+/* .design-service-left{
+    top: 2rem;
+    left: 2rem;
+}
+
+.design-about-right{
+    right: 2rem;
+    top: .5rem;
+} */
+.hero-clipped{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45vh;
+    background-color: #F72222;
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
+}
+.hero-clipped-img img{
+    max-width: 100%;
+    object-fit: cover;
+}
+.hero-text{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+}    
+.hero-text h1, span{
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+}
+.hero-text span{
+    color: #F72222;
+}
+.hero-text h1::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    z-index: 1;
+    transform-origin: 100% 0;
+}
+.hero-text p{
+    margin-top: .5rem;
+    font-size: .7rem;
+    padding-left: .3rem;
+    letter-spacing: 1px;
+    width: 300px;
+}
+.hero .hero-btn{
+    display: block;
+    margin-top: 1.5rem;
+    margin-left: .3rem;
+    outline: 2px solid #F72222;
+    padding: .2rem;
+    width: 7rem;
+    height: 2rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #F72222;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.hero-btn::after{
+    content: '';
+    position: absolute;
+    background-color: #F72222;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: inherit;
+    z-index: -1;
+}
+
+.hero-btn:hover{
+    color: white;
+}
+.hero-btn:hover.hero-btn::after{
+    width: inherit;
+    animation: animBtn .5s steps(20);   
+}
+@keyframes animBtn{
+    0%{
+        width: 10%;
+    }
+    25%{
+        width: 30%;
+    }
+    50%{
+        width: 60%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.scroll-down-btn{
+    z-index: 100;
+    position: absolute;
+    top: 90%;
+    left: 47%;
+    width: 4rem;
+    height: 4rem;
+}
+.scroll-down-btn img{
+    width: 50%;
+    opacity: .5;
+}
+.main-section{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 1.5rem;
+}
+.about-section{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    
+}
+.about-section h2{
+    border-left: 5px solid #F72222;
+    padding-left: .5rem;
+}
+.about-top{
+    width: 100%;
+    min-height: 30%;
+}
+.about-top-text p{
+    text-align: justify;
+    word-break: normal;
+    font-size: .8rem;
+}
+.about-bottom{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 60%;
+    margin-top: 2rem;
+}
+.profile-wrapper{
+    width: 27rem;
+    height: 20rem;
+    display: flex;
+    justify-content: space-around;
+}
+.profile-img{
+    width: 50%;
+    height: 70%;
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-info{
+    height: auto;
+    width: 40%;
+    border-top: 2px solid #F72222;
+    padding-top: .5rem;
+}
+.profile-info1, .profile-info3{
+    margin-top: 5.3rem;
+}
+.profile-info h3{
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+}
+.profile-info h4{
+    color: #F72222;
+    font-size: .9rem;
+    margin-bottom: .5rem;
+}
+.profile-info p{
+    text-align: justify;
+    font-size: .7rem;
+}
+
+
+.services-section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.services-header-text{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+.services-header-text h2{
+    border-right: 5px solid #F72222;
+    padding-right: .5rem;
+}
+.services-list{
+    width: 100%;
+    /* height: auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.service-card{
+    width: 80%;
+    height: 50vh;
+    margin: 1rem auto;
+}
+.service-img-wrapper{
+    width: 90%;
+    height: 50%;
+}
+.service-img-wrapper img{
+    width: 100%;
+    height: 100%;
+}
+.service-caption{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.service-caption h3{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: .5rem;
+}
+.service-caption p{
+    font-size: .8rem;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+.service-caption a{
+    font-size: 1rem;
+    color: #F72222;
+    font-weight: 600;
+}
+.service-caption a:hover{
+    color: crimson;
+}
+.testimonial-section{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 1rem;
+}
+.testimonial-header-text{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.testimonial-header-text h2{
+    border-left: 5px solid #F72222;
+    padding-left: .5rem;
+}
+.testimonial-card-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.testimonial-card{
+    margin-top: 2rem;
+    width: 350px;
+    height: 100px;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    position: relative;
+}
+.testimonial-card .cite-line{
+    position: absolute;
+    display: inline-block;
+    bottom: 1.4rem;
+    right: 11.1rem;
+    width: 1.6rem;
+    height: 2.5px;
+    background-color: white;
+}
+.testimonial-card p{
+   font-size: .7rem;
+}
+.tcard1, .tcard3{
+    background-color: #FC4F4F;
+    color: black;
+}
+.tcard2, .tcard4{
+    background-color: #eee;
+    color: black;
+}
+.tcard2 .cite-line, .tcard4 .cite-line{
+    background-color: #F72222;
+}
+.testimonial-card .cite{
+    position: relative;
+    display: block;
+    color: white;
+    font-size: .8rem;
+    margin-left: 10rem;
+}
+.tcard2 .cite, .tcard4 .cite{
+    color: #F72222;
+}
+.contact-section{
+    width: 100%;
+    min-height: 95vh;
+}
+.contact-header-text{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.contact-header-text h2{
+    border-right: 5px solid #F72222;
+    padding-right: .5rem;
+}
+.contact-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+.contact-info{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.contact-info li{
+    margin-bottom: 1rem;
+    display: flex;
+}
+.contact-info h3, .contact-info span{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.contact-info span{
+    color: #F72222;
+}
+.contact-info li img{
+    width: 1.5rem;
+    height: 1.5rem; 
+    margin-right: 1rem;
+}
+.contact-info li p{
+    font-size: .8rem;
+}
+.contact-form{
+    width: 90%;
+    height: auto;
+    margin: 2rem auto;
+    padding: 0rem 0rem 0rem 3rem;
+}
+.contact-form label{
+    display: block;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-left: auto;
+}
+.contact-form input{
+    margin: 1rem 0;
+    padding: .3rem;
+    font-size: .8rem;
+    width: 90%;
+    
+}
+.contact-form textarea{
+    display: block;
+    resize: none;
+    margin: 1rem 0;
+    width: 90%;
+    height: 6rem;
+}
+.contact-form .form-btn{
+    display: block;
+    outline: none;
+    border: none;
+    padding: .5rem;
+    width: 6rem;
+    height: 2rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: white;
+    background-color: #F72222;
+    cursor: pointer;
+    margin: 1rem 0rem;
+    transition: background-color .3s ease-in;
+}
+.form-btn:hover{
+    background-color: #333;
+}
+footer{
+
+    width: 100%;   
+    background-color: #242424;
+    height: 10rem;
+}
+.social-icons ul{
+    display: flex;
+    justify-content: center;
+}
+.social-icons ul li{
+    padding: 1.5rem;
+
+}
+.social-icons ul li img{
+    width: 1.8rem;
+    height: 1.8rem;
+    opacity: .5;
+    transition: opacity .3s ease-in;
+}
+.footer-bottom{
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+}
+footer hr{
+    width: 100%;
+    margin: 0 auto;
+    opacity: .1;
+}
+.footer-bottom p{
+    font-size: .8rem;
+    color: white;
+    opacity: .5;
+    letter-spacing: 1px;
+}
+.footer-icons-filter{
+    filter: invert(100%) sepia(1%) saturate(336%) hue-rotate(232deg) brightness(116%) contrast(87%);
+}
+.social-icons ul li a:hover .footer-icons-filter{
+    filter: invert(94%) sepia(100%) saturate(0%) hue-rotate(186deg) brightness(107%) contrast(106%);
+    opacity: 1;
+}
+ 
+/* The media queries for lower width*/
+
+@media (max-width: 425px){
+   .profile-wrapper{
+       width: 22rem;
+   }
+   .profile-img{
+    width: 45%;
+    height: 60%;
+    }
+    .profile-info1, .profile-info3{
+        margin-top: 2rem;
+    }
+    .profile-info p{
+        word-break: break-all;
+    }
+}
+@media (max-width: 380px){
+    .hero{
+        height: 90vh;
+    }
+    .hero-clipped{
+        height: 40%;
+    }
+    .hero-text{
+        left: 12%;
+    }
+    .hero-text p{
+        width: 250px;
+    }
+    .hero-text h1, span{
+        font-size: 2.4rem;
+        letter-spacing: 1px;
+    }
+    .profile-wrapper{
+        height: 18rem;
+    }
+    .testimonial-card{
+        width: 300px;
+    }
+    .testimonial-card .cite-line{
+        right: 8rem;
+        bottom: 1.4rem;
+        width: 2rem;
+    }
+    .contact-form{
+        margin-right: 2rem;
+    }
+}
+@media (max-width: 340px){
+    .hero{
+        height: 70vh;
+    }
+    .hero-clipped{
+        height: 25vh;
+    }
+    .hero-text{
+        left: 10%;
+    }
+    .hero-text p{
+        width: 230px;
+    }
+    .hero-text h1, span{
+        font-size: 2.2rem;
+        letter-spacing: 0px;
+    }
+    .design-line-wrapper{
+        top: 5.3rem;
+        right: 2rem;
+        width: 2rem;
+        height: 1.5rem;
+    
+    }
+    .design-clip-left{
+        left: 3rem;
+
+    }
+    .nav-links{
+        height: 50vh;
+    }
+    .nav-links ul li{
+        margin: .5rem 0;
+    }
+    .profile-wrapper{
+        min-height: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 3rem 0 2rem 0;
+    }
+    .profile-wrapper2{
+        flex-direction: column-reverse;
+    }
+    .profile-info{
+        margin-top: 2rem;
+        width: 70%;
+        height: 50%;
+    }
+    .profile-info p{
+        font-size: .7rem;
+    }
+    .profile-img{
+        width: 60%;
+        max-height: 60%;
+    }
+    .profile-img img{
+        max-width: 100%;
+        height: 100%;
+     }
+    .brand{
+        margin-top: 1rem;
+    }
+    .brand a, .brand a span{
+        font-size: 2rem;
+    }
+    .social-icons ul li{
+        padding: 1rem;
+    }
+    .services-list{
+        margin-top: .5rem;
+    }
+    .testimonial-section{
+        min-height: 80vh;
+    }
+    .testimonial-header-text h2{
+        margin-bottom: .5rem;
+    }
+    .contact-section{
+        min-height: 80vh;
+    }
+    .contact-wrapper{
+        margin-top: .5rem;
+    }
+}
+/* The media queries for larger width*/
+@media (min-width: 600px){
+    h2{
+        font-size: 2rem;
+    }
+    .brand a, .brand a span{
+        font-size: 2.5rem;
+    }
+    .burger-menu{
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+    .bar{
+        width: 2rem;
+    }
+    .bar::before{
+        top: -.5rem;
+    }
+    .bar::after{
+        top: .5rem;
+    }
+    .nav-links ul li a{
+        font-size: 1.2rem;
+    }
+    .hero-text h1, span{
+        font-size: 3rem;
+    }
+    .hero-text p{
+        font-size: .9rem;
+        width: 80%;
+        margin-top: 1rem;
+    }
+    .hero .hero-btn{
+        width: 9rem;
+        height: 2.2rem; 
+        font-size: 1.2rem;
+    }
+    .about-top-text p{
+        font-size: 1rem;
+    }
+    .profile-wrapper{
+        width: 34rem;
+        height: 24rem;
+    }
+    .profile-info h3{
+        font-size: 1.5rem;
+    }
+    .profile-info h4{
+        font-size: 1.2rem;
+    }
+    .profile-info p{
+        font-size: .9rem;
+    }
+    .profile-info1, .profile-info3{
+        margin-top: 6rem;
+    }
+    .service-card{
+        width: 90%;
+        height: 60vh;
+    }
+    .service-img-wrapper{
+        width: 100%;
+    }
+    .service-caption h3{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .service-caption p{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .service-caption a{
+        font-size: 1.2rem;
+    }
+    .testimonial-card{
+        margin-top: 2.5rem;
+        padding: 1.2rem;
+        width: 450px;
+        height: 120px;
+    }
+    .testimonial-card p{
+        font-size: .9rem;
+    }
+    .testimonial-card .cite{
+        font-size: 1rem;
+        margin-left: 15rem   ;
+    }
+    .testimonial-card .cite-line{
+        right: 12rem;
+    }
+    .contact-section{
+        min-height: 100vh;
+    }
+    .contact-info h3, .contact-info span{
+        font-size: 1.8rem;
+    }
+    .contact-info li img{
+        width: 2rem;
+        height: 2rem;
+    }
+    .contact-info li p{
+        font-size: 1rem;
+    }
+    .contact-form label{
+        font-size: 1rem;
+    }
+    .contact-form input{
+        font-size: 1rem;
+        padding: .5rem;
+    }
+    .contact-form textarea{
+        height: 8rem;
+    }
+    .contact-form .form-btn{
+        width: 8rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+    }
+}
+@media (min-width: 720px){
+    .hero-text{
+        left: 17%;
+    }
+    .hero-text h1, span{
+        font-size: 3.5rem;
+    }
+    .about-bottom{
+        padding-top: 2rem;
+    }
+    .footer-bottom p{
+        font-size: 1rem;
+    }
+    .testimonial-section{
+        min-height: auto;
+        margin-bottom: 5rem;
+    }
+    .contact-section{
+        min-height: auto;
+        margin-bottom: 5rem;
+    }
+}
+@media (min-width: 840px){
+    .brand a, .brand a span{
+        font-size: 3rem;
+    }
+    .hero-text{
+        left: 20%;
+    }
+    .hero-text h1, span{
+        font-size: 4rem;
+    }
+    .hero-text p{
+        font-size: 1.2rem;
+    }
+    h2{
+        font-size: 2.5rem;
+    }
+    .about-top-text p{
+        font-size: 1.2rem;
+    }
+    .profile-wrapper{
+        width: 45rem;
+        height: 30rem;
+    }
+    .profile-info h3{
+        font-size: 2rem;
+    }
+    .profile-info h4{
+        font-size: 1.5rem;
+    }
+    .profile-info p{
+        font-size: 1rem;
+        word-break: break-all;
+    }
+    .profile-info1, .profile-info3{
+        margin-top: 8rem;
+    }
+    .service-caption h3{
+        font-size: 2rem;
+    }
+    .service-caption p{
+        font-size: 1.2rem;
+    }
+    .service-caption a{
+        font-size: 1.5rem;
+    }
+    .testimonial-card{
+        margin-top: 3rem;
+        padding: 1.5rem;
+        width: 550px;
+        height: 150px;
+    }
+    .testimonial-card p{
+        font-size: 1rem;
+    }
+    .testimonial-card .cite{
+        display: block;
+        font-size: 1.2rem;
+        margin-left: 18rem   ;
+    }
+    .testimonial-card .cite-line{
+        right: 15rem;
+        bottom: 2.1rem;
+        width: 2rem;
+    }
+}    
+@media (max-width: 1279px){
+    .about-top-img{
+        display: none;
+    }
+    .testimonial-img{
+        display: none;
+    }
+}
+@media (min-width: 1280px){
+    .burger-menu{
+        display: none;
+    }
+    a.current{
+        border-bottom: 1.5px solid  #cacaca
+        
+    }
+    .nav-links{
+        position: static;
+        width: 50%;
+        height: 100%;
+        transform: translatey(0);
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .nav-links ul{
+        padding: 0 1rem;
+        width: 80%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .scrolled-nav .nav-links{
+        background-color: transparent;
+    }
+    .brand a{
+        margin-left: 2rem;
+    }
+    .brand a, .brand a span{
+        font-size: 2.8rem;
+    }
+    .nav-links ul li a{
+        color: white;
+        margin-right: 2rem;
+        letter-spacing: 1px;
+        font-size: 1rem;
+    }
+    .nav-links ul li a:hover{
+        color: #242424;
+    }
+    .scrolled-nav .nav-links ul li a:hover{
+        color: #F72222;
+    }
+    .hero-clipped{
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        right: 0;
+        clip-path: polygon(47% 0, 100% 0%, 100% 100%, 60% 100%); 
+    }
+    .hero-text{
+        left: 10%;
+        top: 35%;
+    }
+    .hero-text h1, span{
+        font-size: 3.5rem;
+    }
+    .hero-text p{
+        font-size: 1rem;
+    }
+    .design-line-wrapper{
+        top: 80%;
+        left: 5%;
+        width: 4.5rem;
+        height: 2.5rem;
+    }
+    .design-line{
+        height: 4px;
+    }
+    .design-line::before{
+        top: -.9rem;
+        left: -1.5rem;
+    }
+    .design-line::after{
+        top: .9rem;
+        left: -1.5rem;
+    }
+    .design-clip-left{
+        left: 90%;
+        top: 20%;
+    }
+    .scroll-down-btn{
+        bottom: 3rem;
+        left: 50%;
+        width: 5rem;
+    }
+    .main-section{
+        padding: 1.5rem 4rem 1.5rem 4rem;
+    }
+    h2{
+        font-size: 2rem;
+    }
+    .about-top{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 30%;
+    }
+    .about-top-text{
+        width: 50%;
+        height: 100%;
+    }
+    .about-top-text p{
+        font-size: 1rem;
+    }
+    .about-top-img{
+        width: 40%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-top-img img{
+        max-width: 50%;
+        object-fit: cover;
+    }
+    .about-bottom{
+        max-width: 1366px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-content: center;
+    }
+    .profile-wrapper{
+        width: 80%;
+        height: 100%;
+        justify-self: flex-start;
+    }
+    .profile-wrapper2{
+        justify-self: flex-end;
+    } 
+    .profile-info1, .profile-info3{
+        margin-top: 5.5rem;
+    }
+    .profile-info{
+        width: 45%;
+    }
+    .profile-info h3{
+        font-size: 1.5rem;
+    }
+    .profile-info h4{
+        font-size: 1.2rem;
+    }
+    .profile-info p{
+        font-size: .9rem;
+    }
+    .services-list{
+        flex-direction: row;
+    }
+    .service-card{
+        width: 25%;
+        height: 40vh;
+    }
+    .service-img-wrapper{
+        width: 100%;
+    }
+    .service-caption h3{
+        font-size: 1.5rem;
+        margin-top: 3rem;
+    }
+    .service-caption p{
+        font-size: 1rem;
+    }
+    .service-caption a{
+        font-size: 1.2rem;
+    }
+    .services-section{
+        min-height: 80vh;
+    }
+    .testimonial-section{
+        min-height: 100vh;
+    }
+    .testimonial-header-text{
+        margin-bottom: 2rem;
+    }
+    .testimonial-img{
+        width: 50%;
+        justify-self: center;
+    }
+    .testimonial-img img{
+        width: 100%;
+    }
+    .testimonial-card-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: repeat(4, .2fr);
+        /* grid-row-gap: 5rem; */
+        align-self: flex-end;
+        grid-template-areas: 
+        "img card1"
+        "card2 ."
+        ". card3"
+        "card4 .";
+    }
+    .testimonial-img{
+        grid-area: img;
+    }
+    .testimonial-card:nth-child(2){
+        grid-area: card1;
+    }
+    .testimonial-card:nth-child(3){
+        grid-area: card2;
+        justify-self: flex-end;
+    }
+    .testimonial-card:nth-child(4){
+        grid-area: card3;
+    }
+    .testimonial-card:nth-child(5){
+        grid-area: card4;
+        justify-self: flex-end;
+    }
+    .testimonial-card{
+        width: 500px;
+        height: 120px;
+    }
+    .testimonial-card p{
+        font-size: .9rem;
+    }
+    .testimonial-card .cite{
+        font-size: 1rem;
+    }
+    .testimonial-card .cite-line{
+        bottom: 1.2rem;
+        right: 12rem;
+    }
+    .contact-wrapper{
+        flex-direction: row;
+        max-width: 1400px;
+    }
+    .contact-info{
+        width: 60%;
+    }
+
+}
