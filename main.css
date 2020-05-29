@@ -732,6 +732,15 @@ footer hr{
     .contact-form{
         margin-right: 2rem;
     }
+    .social-icons ul li{
+        padding: 1.5rem 1rem;
+    
+    }
+    .social-icons ul li img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
 }
 @media (max-width: 340px){
     .hero{
@@ -1261,9 +1270,19 @@ footer hr{
     .contact-wrapper{
         flex-direction: row;
         max-width: 1400px;
+        margin-right: 10rem;
     }
     .contact-info{
         width: 60%;
     }
+    .social-icons ul li{
+        padding: 2rem 1.5rem;
+    
+    }
+    .social-icons ul li img{
+        width: 2rem;
+        height: 2rem;
+    }
+
 
 }
